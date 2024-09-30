@@ -1,12 +1,11 @@
 console.log("Javascript funkar!");
 
 // Deklarerar variabler 
-
 let completedCount = 0;
 const todoArray = [];    // Array som kommer att hålla alla sysslorna 
 
 
-// Deklarera hmtl variabler  
+// Deklarera HTML- variabler  
 const todoInput = document.querySelector("#todoInput");
 const adding = document.getElementById("adding");
 const todoList = document.querySelector("ul");
@@ -25,17 +24,27 @@ todoInput.addEventListener("keypress", function(event){
 
 });
 
+//Uppdatera antalet färdiga sysslor 
+function updateCompletedCountText() {
+
+    if (completedCount === 0){
+
+        countToDo.innerText = "inga färdiga sysslor.";
+
+    } else {
+        countToDo.innerText = `Antalet färdiga sysslor:  ${completedCount}`;
+    }
+
+}
 
 adding.addEventListener("click", function() {  // Addera listener, innebär funktion som "svarar" på olika funktioner, i detta fall ett klick 
-
 
     const text = todoInput.value.trim(); // Få text från input. Deklareras här eftrsom att den inte syns när funktionen inte körs. 
 
     if (text.length === 0) {
         infoText.innerText = "Du måste skriva något!"; 
         return;   // Hoppar ur en funktion
-    }
-    else {
+    } else {
         infoText.innerText = "";
     }
 
@@ -54,25 +63,29 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
     deleteButton.style.marginLeft = "10px";
     todoitem.appendChild(deleteButton); //Lägger till knapp i listobjekt
 
+    //Radera syssla
     deleteButton.addEventListener("click", function(){
-        todoList.removeChild(todoitem);
-    });
-
-
-    itemLabel.addEventListener("click", function () {
-
-        if(todoitem.getAttribute("class") == "completed"){
-            
-            todoitem.setAttribute("class", "")
+        if (todoitem.getAttribute("class") === "completed") {
             completedCount--;
         }
-        else {
+        todoList.removeChild(todoitem);
+        countToDo.innerText = `Antalet färdiga sysslor: ${completedCount}`;
+});
+
+//Markera som färdig/ofärdig
+    itemLabel.addEventListener("click", function () {
+
+        if(todoitem.getAttribute("class") === "completed"){
+            todoitem.setAttribute("class", "")
+            completedCount--;
+        } else {
             todoitem.setAttribute("class", "completed")
             completedCount++;
             
         }
         
-    countToDo.innerText = `Antalet färdiga sysslor:  ${completedCount}`;
+
+        updateCompletedCountText();
         
 
     });
