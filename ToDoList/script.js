@@ -63,6 +63,22 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
     deleteButton.style.marginLeft = "10px";
     todoitem.appendChild(deleteButton); //Lägger till knapp i listobjekt
 
+
+
+
+    // uppdatera i consolen/arrayen
+    function removeTodo(index) {
+        todoArray.splice(index, 1); // Tar bort todo från arrayen
+        todoList.innerHTML = "";
+        todoArray.forEach(function(todo, index) {
+            const todoitem = document.createElement("li");
+            todoitem.innerText = todo;
+            todoList.appendChild(todoitem);
+        });
+        
+    
+      }
+      
     //Radera syssla
     deleteButton.addEventListener("click", function(){
         if (todoitem.getAttribute("class") === "completed") {
@@ -70,6 +86,8 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
         }
         todoList.removeChild(todoitem);
         countToDo.innerText = `Antalet färdiga sysslor: ${completedCount}`;
+
+
 });
 
 //Markera som färdig/ofärdig

@@ -44,11 +44,18 @@ color: #e9fd85;
     font-size: 20px;
     margin-bottom: 10px;
     
+    
   
     
 
   }
 
+  
+  .input{
+
+    text-align: center;
+
+  }
   button:active{
 color: rgb(1, 3, 3);
 background-color: beige;
