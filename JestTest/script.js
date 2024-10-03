@@ -1,15 +1,18 @@
 console.log("Det funkar");
 
 
-
-    const inputText = document.getElementById('inputText');
-
-    inputText.addEventListener("keyup", function(event) {
-        event.preventDefault();
-        inputText.value = inputText.value.toUpperCase();
+function turnIntoVersaler(inputText){
+    return inputText.toUpperCase ();
+}
 
 
-        console.log(inputText.value);
+const inputText = document.getElementById('inputText');
+const convertButton = document.getElementById('convertButton');
+    
 
-    });
+convertButton.addEventListener("click", function() {
+
+    inputText.value = turnIntoVersaler(inputText.value)
+
+});
 
