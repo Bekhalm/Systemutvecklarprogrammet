@@ -1,22 +1,12 @@
-function mySum(a, b){
-return a + b;
+function turnIntoVersaler(inputText){
+    return inputText.toUpperCase();
 }
 
 describe("Simple test suite", () => {
-
-
     test("test case 1", () => {
+        const inputText = "hej";
+        const expectedOutput = "HEJ";
 
-
-    
-        const input1 = 1;
-    
-        const input2 = 2; 
-    
-        const expectedResult = 3;
-
-    expect(mySum(input1, input2)).toBe(expectedResult);
-
-});
-
+        expect(turnIntoVersaler(inputText)).toBe(expectedOutput);
+    });
 });
