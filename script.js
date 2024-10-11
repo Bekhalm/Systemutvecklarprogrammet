@@ -19,7 +19,7 @@ todoInput.addEventListener("keypress", function(event){
 
     if(event.key == "Enter") {
         event.preventDefault();
-        document.getElementById("adding").click();
+        adding.click();
     }
 
 });
@@ -29,20 +29,26 @@ function updateCompletedCountText() {
 
     if (completedCount === 0){
 
-        countToDo.innerText = "inga färdiga sysslor.";
+        countToDo.innerText = "0 genomförda";
 
     } else {
-        countToDo.innerText = `Antalet färdiga sysslor:  ${completedCount}`;
+        countToDo.innerText = ` genomförda: ${completedCount}`;
     }
 
 }
 
+//Lägg till ny syssla 
 adding.addEventListener("click", function() {  // Addera listener, innebär funktion som "svarar" på olika funktioner, i detta fall ett klick 
-
     const text = todoInput.value.trim(); // Få text från input. Deklareras här eftrsom att den inte syns när funktionen inte körs. 
+    const infoText = document.querySelector('#infoText');
 
     if (text.length === 0) {
         infoText.innerText = "Du måste skriva något!"; 
+       
+        infoText.style.animation = 'none';
+        infoText.offsetHeight; 
+        infoText.style.animation = 'blinker 1s linear 3';
+       
         return;   // Hoppar ur en funktion
     } else {
         infoText.innerText = "";
@@ -52,6 +58,7 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
     todoInput.value = formattedText;
     
     const todoitem = document.createElement("li");  // Skapa ett nytt listobjekt (li)
+    todoitem.classList.add("fade-in"); 
     todoList.appendChild(todoitem);   
     
     const itemLabel = document.createElement("span");  // Skapa en span för sysslan
@@ -65,23 +72,26 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
 
     //Radera syssla
     deleteButton.addEventListener("click", function(){
-        if (todoitem.getAttribute("class") === "completed") {
+        if (todoitem.classList.contains("completed")) {
             completedCount--;
         }
+
         todoList.removeChild(todoitem);
-        countToDo.innerText = `Antalet färdiga sysslor: ${completedCount}`;
+        updateCompletedCountText();
 });
 
 //Markera som färdig/ofärdig
+
     itemLabel.addEventListener("click", function () {
 
-        if(todoitem.getAttribute("class") === "completed"){
-            todoitem.setAttribute("class", "")
+        if (todoitem.classList.contains("completed")) {
+            todoitem.classList.remove("completed");
             completedCount--;
+           
         } else {
-            todoitem.setAttribute("class", "completed")
+            todoitem.classList.add("completed");
             completedCount++;
-            
+      
         }
         
 
@@ -92,8 +102,7 @@ adding.addEventListener("click", function() {  // Addera listener, innebär funk
 
 
     todoInput.value = "";
-
-    todoArray.push(text);
+    todoArray.push(formattedText);
 
 
     
