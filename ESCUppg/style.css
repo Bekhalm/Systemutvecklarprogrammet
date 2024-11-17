@@ -1,13 +1,13 @@
 /* Global Styles */
 html, body {
-    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     background-color: white; 
-    font-family: Arial, sans-serif;
-    font-size: 16px; /* Grundstorlek */
-    line-height: 1.6; /* För bättre läsbarhet */
+    font-family: 'roboto',sans-serif;
+    min-width: 350px;
+    max-width: 1280px;
+    margin: auto;
 }
 
 /* Media Query för små skärmar */
@@ -20,12 +20,7 @@ html, body {
 
 /* Header Styles */
 .header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px; /* Mer padding för visuellt utrymme */
-    background-color: #0d1d27; /* Mörk bakgrund */
-    color: white;
+    background-color: rgb(25, 25, 32) /* Mörk bakgrund */
 }
 
 .header_title {
@@ -35,8 +30,11 @@ html, body {
 }
 
 .logo {
-    width: 150px; /* Fasta storlek för bättre konsistens */
-    height: auto;
+    background-image: url(logo.jpg);
+    background-size: 8rem;
+    background-repeat: non-repeat;
+    background-position: 1rem 1rem;
+    color: white
 }
 
 nav ul {
@@ -113,19 +111,17 @@ nav ul li a:hover {
 }
 
 .review_img {
-    width: 100px; 
-    height: 100px; 
-    border-radius: 50%; 
+    height: 80px; 
+    margin-right: 20px;
     object-fit: cover; /* Håller bilden proportionerlig */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .quote_section {
-    font-size: 18px;
+    font-size: 1.5rem;
+    width: 330px;
+    max-width: 600px;
     color: #333;
     font-style: italic;
-    margin: 0;
-    line-height: 1.5;
 }
 
 /* Challenges Section */
