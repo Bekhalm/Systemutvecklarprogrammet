@@ -6,96 +6,140 @@
     <title>ESCUPPG</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
+
+
 <body>
-    <header class="header-container">
-<img src="logo.jpg" alt="logo" class="logo">
-        <h1>Hacker<br>Escape<br>Rooms</h1>
-
+    <!---HEADER PART-->
+    <header class="header">
+        <img class="logo" src="logo.jpg" alt="Hacker Escape Rooms Logo">
+        <h1 class="header_title">Hacker Escape Rooms</h1>
+       
+      <!---Visible desktop--> 
+        <nav class="header_desktop_menu" >
+            <ul class="header_desktop_menu_ul">
+                <li><a class="header_playonline" href="#">Play online</a></li>
+                <li><a class="header_playonsite" href="#">Play on-site</a></li>
+                <li><a class="header_story" href="#">The story</a></li>
+                <li><a class="header_contact" href="#">Contact us</a></li>
+            </ul>
+        </nav>
     </header>
-<img src="hackerbild.png" alt="bodyimg" class="bodyimg">
 
-
-
-<div class="button-container">
-<button class="button1">On-site challenges</button>
-</div>
-
-<div class="button2-container"></div>
-<button class="button2">Online challenges</button>
-</div>
-
-<section class="quote-section">
-    <div class="quote-content">
-        <img src="profilbild.png" alt="profilbild" class="profilbild">
-        <blockquote>
-            <p>This is a quote about how amazing the place is and how much me and my friends had fun here!</p>
-            <cite>John Doe, visited us in September 2021</cite>
-        </blockquote>
+<main>
+    <div class="hero">
+        <img class="hero_img" src="hackerbild.png" alt="Hacker at computer">
     </div>
-</section>
 
-<section class="challenges-section">
-    <h2>Popular challenges right now</h2>
-    <div class="challenge-card">
-        <img src="hackerbild.png" alt="Challenge Image">
-        <div class="card-content">
+    <!---HERO DESKTOP-->
+    <div class="hero_desktop">
+        <img class="hero_desktop_img" src="hackerbild.png" alt="Hacker at computer">
+</div>
+
+<!---ON-SITE & ONLINE CHALLENGES BTNS-->
+    <div class="button_container">
+        <a href="#" class="button1" role="button">On-site challenges</a>
+        <a href="#" class="button2" role="button">Online challenges</a>
+    </div>
+
+<!---REVIEW WITH PICTURE-->
+    <section class="review_section">
+        <figure class="review_content">
+            <img class="review_img" src="profilbild.png" alt="Picture of John Doe" >
+            <blockquote>
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
+                <cite>John Doe, visited us in September 2021</cite>
+            </blockquote>
+        </figure>
+
+        <figure class="review_content">
+            <img class="review_img" src="profilbild.png" alt="Picture of John Doe" >
+            <blockquote>
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it</p>
+                <cite>John Doe, visited us in September 2021</cite>
+            </blockquote>
+        </figure>
+
+    </section>
+
+    <!---CHALLANGE OPTIONS-->
+   <h2 class="challenge_options_title">Popular challenges right now</h2> 
+    <div class="challenge_options">
+        <div class="challenge_options_item">
+            <img class="challenge_options_img" src="hackerbild.png" alt="Hacker at computer">
+            
             <h3>Title of room (on-site)</h3>
-            <p>Platea et odio enim mauris vehicula, cursus ipsum urna...</p>
-            <button>Book this room</button>
+            
+            <div class="stars">
+                <img class="star--filled" src="star4.png" alt="Star">
+                <img class="star--filled" src="star4.png" alt="Star">
+                <img class="star--filled" src="star4.png" alt="Star">
+                <img class="star--filled" src="star5.png" alt="Star">
+                <img class="popular-challenges__star--empty" src="images/Star_5.png" alt="Empty star">
+            </div>
+            
+            <p class="challenge_options_text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p> 
+            
+            <button class="challenge_bookbtn">Book this room</button>
+            <p class="challenge_participants">2-6 Participants</p>
         </div>
     </div>
-    
-    <div class="button-container">
-        <button class="button1">On-site challenges</button>
-        </div>
-        
-        <div class="button2-container"></div>
-        <button class="button2">Online challenges</button>
-        </div>
-</section>
 
-
-<!-- Story Section -->
-<section class="story-section">
-    <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
-    <button>Read the full story</button>
-</section>
-
-<!-- Play Section -->
-<section class="play-section">
-    <div class="play-card">
-        <img src="friends.jpeg" alt="friends" class="friends">
-        <div class="card-content">
-            <h3>Play with your friends or build your team stronger at work</h3>
-            <p>Praeterea, ea cupio inveni ut erum non accusatis...</p>
-            <button>Book on-site today</button>
-        </div>
+    <!---ON-SITE & ONLINE CHALLENGES BTNS AGAIN-->
+    <div class="button_container">
+        <a href="#" class="button1" role="button">On-site challenges</a>
+        <a href="#" class="button2" role="button">Online challenges</a>
     </div>
+
+<!---QUOTE SECTION-->
+    <section class="quote_section">
+        <p>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+        <button class="quote_section_btn">Read the full story</button>
+    </section>
+
     
-    <div class="play-card">
-        <img src="solo.jpeg" alt="solo" class="solo">
-        <div class="card-content">
-            <h3>Play online or visit our venue for one of our 25 escape rooms</h3>
-            <p>Praeterea, ea cupio inveni ut erum non accusatis...</p>
-            <button>See all challenges</button>
+    <!---PLAY SECTION--->
+    <section class="play_section">
+        <div class="play_card">
+            <img class="play_section_img" src="friends.jpeg" alt="Group of friends playing" class="friends">
+            <div class="card_content">
+                <h3>Play with your friends or build your team stronger at work</h3>
+                <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+                <button>Book on-site today</button>
+            </div>
         </div>
-    </div>
-</section>
 
+        <div class="play_card">
+            <img class="play_section_img" src="solo.jpeg" alt="Person playing solo" class="solo">
+            <div class="card_content">
+                <h3>Play online or visit our venue for one of our 25 escape rooms</h3>
+                <p>Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+                <button>See all challenges</button>
+</main>
 
-<div class="footer-container"> 
-    <footer>
-    <p><strong>[Esc] Hacker Escape Rooms</strong><br>Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
-    
-    <p><strong>Site map</strong><br>The Story<br>Contact Us<br>Legal<br><br>Play online<br>Play on-site</p>
-    <p><strong>Follow us on</strong><br>Facebook<br>Instagram<br>Twitter</p>
-    </footer>
-
-</div>
-
-</body>
-
-
-
-
-</html>
+<!---FOOTER SECTION-->
+    <footer class="footer">
+        <div class="footer_section">
+            <p><strong>[Esc] Hacker Escape Rooms</strong><br>Quodsi haberent magnalia inter potentiam et divitias...</p>
+        </div>
+                    
+        <div class="footer_section">
+            <p><strong>Site map</strong></p>
+            <ul>
+                            <li><a href="#">The Story</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Legal</a></li>
+                            <li><a href="#">Play online</a></li>
+                            <li><a href="#">Play on-site</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer_section">
+                        <p><strong>Follow us on</strong></p>
+                        <ul>
+                            <li><a href="#">Facebook</a></li>
+                            <li><a href="#">Instagram</a></li>
+                            <li><a href="#">Twitter</a></li>
+                        </ul>
+                    </div>
+                </footer>
+        </div>
