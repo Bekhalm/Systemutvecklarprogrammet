@@ -24,8 +24,19 @@ body {
 
 .header_title {
   font-size: 1.2rem;
-  margin-right: auto;
+  margin-right: 55%;
   order: 2;
+}
+
+@media only screen and (min-width: 1060px) {
+  .header__logo-title {
+    font-size: 40px;
+    margin-left: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex: start;
+  }
 }
 
 .logo_img {
@@ -47,27 +58,36 @@ body {
   right: 1rem;
 }
 
-.header_desktop_menu {
+.header_desktop_menu_ul {
   display: none;
 }
 
+
+
+
+
 .hero {
+  position: relative;
+  width: 100%;
   text-align: center;
-  margin: 1rem;
+  overflow: hidden;
+  
 }
 
 .hacker_img {
   width: 100%;
-  max-height: 300px;
+  height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .button_container {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: center;
   gap: 1rem;
-  margin: 1rem 0;
+  margin: 2rem 1rem;
+  font-weight: bold;
 }
 
 .button1, .button2 {
@@ -75,39 +95,82 @@ body {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: white;
 }
 
 .button1 {
-  background-color: #ea3b32;
-  color: white;
+  color: #36769D;
+  padding: 0%;
+}
+@media screen and (min-width: 960px) {
+  .button1 {
+    display: block;
+    border-width: 0;
+    background-color: #E3170A;
+    padding: 1rem 3rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 0.2em;
+  }
 }
 
 .button2 {
   background-color: #5daee0;
-  ;
-  color: white;
+  color: black;
+  display: block;
+  border-width: 0;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  font-size: 1 rem;
+  
+  border-radius: 0.2rem;
 }
 
+
+
 .review_section {
-  text-align: center;
-  margin: 1rem;
+display: flex;
+align-items: center;
+gap: 1rem;
+text-align: center;
+margin: 1rem;
+}
+
+.review_section:nth-of-type(2) {
+  display: none;
+}
+
+@media screen and (min-width: 960px) {
+  .review_section:nth-of-type(2) {
+    display: block;
+  }
 }
 
 .review_img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  flex-shrink: 0;
+  border-radius: 50%;
   margin-bottom: 0.5rem;
 }
 
 .review_content {
   font-style: italic;
+  text-align: left;
+  margin-left: center;
 }
 
 
 
 .challenge_options {
+  padding: 2rem;
+}
+
+.challenge_content {
   padding: 1rem;
+  text-align: center;
 }
 
 .challenge_options_title {
@@ -122,17 +185,19 @@ body {
 
 .challenge {
   border: 1px solid #ccc;
-  padding: 1rem;
-  text-align: center;
+  padding: 0rem;
   background-color: white;
   border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .challenge_img {
   width: 100%;
-  height: 150px;
+  height: auto;
   object-fit: cover;
-  margin-bottom: 0.5rem;
+  
 }
 
 .challenge_title {
@@ -153,15 +218,19 @@ body {
 
 .challenge_bookbtn {
   padding: 0.5rem 1rem;
-  background-color: #28a745;
+  background-color: #E3170A;
   color: white;
-  border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.challenge_bookbtn:hover {
+  background-color: #E3170A
 }
 
 .quote_section {
-  background-color: #001f3f;
+  background-color: #001932;
   color: white;
   text-align: center;
   padding: 1rem;
@@ -173,11 +242,12 @@ body {
 
 .quote_section_btn {
   padding: 0.5rem 1rem;
-  background-color: #0074d9;
+  background-color: #001932;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  border-color: #8acfe5;
 }
 
 .play_section {
@@ -222,7 +292,7 @@ body {
 }
 
 .footer {
-  background-color: #001f3f;
+  background-color: #001932;
   color: white;
   text-align: center;
   padding: 1rem;
