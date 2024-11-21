@@ -184,6 +184,9 @@ margin: 1rem;
 }
 
 .challenge {
+  flex: 1 1 calc(33.333% - 1rem);
+  max-width: calc(33.333% - 1rem);
+  box-sizing: border-box;
   border: 1px solid #ccc;
   padding: 0rem;
   background-color: white;
@@ -251,15 +254,14 @@ margin: 1rem;
 }
 
 .play_section {
-  padding: 1rem;
+  
 }
 
 .play_card, .play_card2 {
   background-color: white;
   border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
+  
+ 
 }
 
 
@@ -351,7 +353,10 @@ margin: 1rem;
   }
 
   .card {
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    flex-wrap: wrap; /* Tillåter rutorna att brytas till nästa rad vid behov */
+    gap: 1rem; /* Lägger till mellanrum mellan rutorna */
+    justify-content: center;
   }
 
   .play_section {
