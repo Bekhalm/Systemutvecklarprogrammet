@@ -156,10 +156,17 @@ margin: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.review_content {
+.review_content1, .review_content2 {
   font-style: italic;
   text-align: left;
   margin-left: center;
+}
+
+@media  and (min-width: 960px) {
+  .review_content2 {
+    display: none;
+  }
+  
 }
 
 
