@@ -183,6 +183,8 @@ margin: 1rem;
   gap: 1rem;
 }
 
+
+
 .challenge {
   flex: 1 1 calc(33.333% - 1rem);
   max-width: calc(33.333% - 1rem);
@@ -254,14 +256,15 @@ margin: 1rem;
 }
 
 .play_section {
-  
+  padding: 1rem;
 }
 
 .play_card, .play_card2 {
   background-color: white;
   border: 1px solid #ccc;
-  
- 
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
 }
 
 
