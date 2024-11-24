@@ -13,38 +13,31 @@ body {
 }
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
   background-color: #00162c;
   color: white;
   padding: 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
+  position: fixed;
 }
 
 .header_title {
   font-size: 1.2rem;
-  margin-right: 55%;
+  margin-right: 75%;
   order: 2;
 }
 
-@media only screen and (min-width: 1060px) {
-  .header__logo-title {
-    font-size: 40px;
-    margin-left: 15px;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    flex: start;
-  }
-}
-
 .logo_img {
-  width: 40px;
-  height: 40px;
-  margin-right: auto;
-  order: 1;
-  
+  width: 50px;
+  height: 50px;
+  /*margin-right: auto;*/
+  /*order: 1;*/
 }
 
 .menu_icon {
@@ -62,15 +55,15 @@ body {
   display: none;
 }
 
-
-
-
-
 .hero {
   position: relative;
   width: 100%;
-  text-align: center;
+  height: 70vh;
+  display: flex;
+  align-items: center;
   overflow: hidden;
+  justify-content: center;
+  margin-top: 60px;
   
 }
 
@@ -82,69 +75,77 @@ body {
 }
 
 .button_container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column-reverse;
-  align-items: center;
+  /*align-items: center;*/
   gap: 1rem;
-  margin: 2rem 1rem;
+  /*margin: 2rem 1rem;*/
   font-weight: bold;
 }
 
 .button1, .button2 {
-  padding: 0.5rem 1rem;
+  padding: 1rem 2rem; /* Make buttons bigger */
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  background-color: white;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  width: 200px; /* Ensure equal size for both buttons */
+  color: white;
 }
 
 .button1 {
-  color: #36769D;
-  padding: 0%;
-}
-@media screen and (min-width: 960px) {
-  .button1 {
-    display: block;
-    border-width: 0;
-    background-color: #E3170A;
-    padding: 1rem 3rem;
-    color: white;
-    text-decoration: none;
-    font-size: 1.5rem;
-    border-radius: 0.2em;
-  }
+  color: #E3170A;
 }
 
 .button2 {
-  background-color: #5daee0;
-  color: black;
-  display: block;
-  border-width: 0;
-  padding: 0.5rem 1rem;
-  text-decoration: none;
-  font-size: 1 rem;
-  
-  border-radius: 0.2rem;
+  color: #5daee0;
 }
 
+.button1:hover, .button2:hover {
+  opacity: 0.9; /* Slight hover effect */
+}
 
+@media only screen and (min-width: 768px) {
+  .header__logo-title {
+    font-size: 40px;
+    margin-left: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    flex: start;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+  .hero{
+    height: 90vh;
+  }
+
+  .button_container {
+    gap: 2rem;
+  }
+
+}
 
 .review_section {
 display: flex;
-align-items: center;
-gap: 1rem;
-text-align: center;
-margin: 1rem;
+gap: 1.5rem;
+margin: 1.5rem 0;
+flex-direction: column;
 }
 
-.review_section:nth-of-type(2) {
-  display: none;
-}
 
-@media screen and (min-width: 960px) {
-  .review_section:nth-of-type(2) {
-    display: block;
-  }
+.review_content {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
 .review_img {
@@ -152,24 +153,62 @@ margin: 1rem;
   height: 50px;
   border-radius: 50%;
   flex-shrink: 0;
-  border-radius: 50%;
-  margin-bottom: 0.5rem;
+  /*margin-bottom: 0.5rem; */
 }
 
-.review_content1, .review_content2 {
+blockquote {
+  margin: 0;
   font-style: italic;
-  text-align: left;
-  margin-left: center;
 }
 
-@media  and (min-width: 960px) {
-  .review_content2 {
+blockquote p {
+  margin: 0;
+  line-height: 1.5; /* Improve readability */
+}
+
+blockquote cite {
+  display: block; /* Display on a new line */
+  font-style: normal; /* Remove italic for citation */
+  font-size: 0.9rem;
+  color: gray;
+}
+
+/* Side-by-side layout for desktop or tablet screens */
+@media screen and (min-width: 768px) {
+  .review_section {
+    flex-direction: row;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: flex-start;
+  }
+
+  .review_content {
+    flex: 1 1 calc(50% - 2rem); /* Allow two reviews per row */
+    display: flex; /* Ensure image and text stay side by side */
+    gap: 1rem; /* Spacing between image and text */
+    align-items: flex-start; /* Align items at the top */
+    max-width: calc(50% - 2rem); /* Limit each review to half the width */
+  }
+
+  .review_img {
+    width: 75px; /* Increase image size for desktop */
+    height: 75px; /* Keep the image circular */
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .review_section {
+    flex-direction: row;
+  }
+  .review_content:nth-of-type(n+2){
     display: none;
   }
-  
 }
 
-
+.review_quote{
+  text-align: left;
+}
 
 .challenge_options {
   padding: 2rem;
@@ -189,8 +228,6 @@ margin: 1rem;
   display: grid;
   gap: 1rem;
 }
-
-
 
 .challenge {
   flex: 1 1 calc(33.333% - 1rem);
@@ -273,8 +310,6 @@ margin: 1rem;
   border-radius: 8px;
   margin-bottom: 1rem;
 }
-
-
 
 
 .play_section_img, .play_section_imgsolo {
