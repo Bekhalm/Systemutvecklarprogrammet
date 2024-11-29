@@ -6,10 +6,11 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   line-height: 1.6;
   color: #333;
   background-color: #f9f9f9;
+  font-size: 16px;
 }
 
 .header {
@@ -25,6 +26,7 @@ body {
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  background-repeat: no-repeat;
 }
 
 .header_title {
@@ -49,6 +51,8 @@ body {
   position: absolute;
   top: 1rem;
   right: 1rem;
+  margin: 0;
+  padding: 0;
 }
 
 .header_desktop_menu_ul {
@@ -175,7 +179,7 @@ blockquote cite {
 
 /* Side-by-side layout for desktop or tablet screens */
 @media screen and (min-width: 768px) {
-  .review_section {
+  .review1 {
     flex-direction: row;
     display: flex;
     flex-wrap: wrap;
@@ -183,7 +187,7 @@ blockquote cite {
     justify-content: flex-start;
   }
 
-  .review_content {
+  .review2 {
     flex: 1 1 calc(50% - 2rem); /* Allow two reviews per row */
     display: flex; /* Ensure image and text stay side by side */
     gap: 1rem; /* Spacing between image and text */
@@ -423,4 +427,8 @@ blockquote cite {
   .footer_section {
     margin-bottom: 0;
   }
+}
+
+.star_rating{
+  text-align: left;
 }
