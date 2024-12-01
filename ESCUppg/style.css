@@ -7,35 +7,34 @@
 
 body {
   font-family: sans-serif;
+  line-height: 1.6;
 }
 
 .header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1000;
-  background-color: #00162c;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  align-items: center;
+  position: relative;
   justify-content: space-between;
-  position: fixed;
-  background-repeat: no-repeat;
+  padding: 0;
+  margin: 0;
+  background-color: #011827;
+  width: auto;
+  color: white;
+  height: 100%;
 }
 
 .header_title {
   font-size: 1.2rem;
-  margin-right: 75%;
-  order: 2;
+  margin-left: 1rem;
 }
 
 .logo_img {
   width: 50px;
   height: 50px;
-  /*margin-right: auto;*/
-  /*order: 1;*/
+}
+
+@media screen and (min-width: 960px) {
+  .header {
+    height: 150px;
+  }
 }
 
 .menu_icon {
@@ -44,105 +43,95 @@ body {
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  margin: 0;
-  padding: 0;
 }
 
-.header_desktop_menu_ul {
+.header_desktop_menu {
   display: none;
 }
 
-.hero {
-  position: relative;
-  width: 100%;
-  height: 70vh;
+.header_desktop_menu_ul {
   display: flex;
-  align-items: center;
-  overflow: hidden;
-  justify-content: center;
-  margin-top: 60px;
-  
+  list-style: none;
+  gap: 1.5rem;
 }
 
-.hacker_img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-.button_container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column-reverse;
-  /*align-items: center;*/
-  gap: 1rem;
-  /*margin: 2rem 1rem;*/
-  font-weight: bold;
-}
-
-.button1, .button2 {
-  padding: 1rem 2rem; /* Make buttons bigger */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  text-align: center;
-  font-weight: bold;
-  width: 200px; /* Ensure equal size for both buttons */
+.header_desktop_menu_ul li a {
+  text-decoration: none;
   color: white;
+  font-size: 1rem;
 }
+
+.header_desktop_menu_ul li a:hover {
+  color: #8acfe5;
+}
+
+/* HERO SECTION */
+.hero {
+  background: url(hackerbild.png);
+  background-size: cover;
+  background-position: center center;
+  height: 40vh;
+}
+/* HERO SECTION SLUT*/
+
 
 .button1 {
-  color: #E3170A;
+  display: block;
+  background-color: #8ACFE5;
+  font-size: 20px;
+  font-weight: bold;
+  width: 250px;
+  border: none;
+  border-radius: 2px;
+  margin: auto;
+  padding: 10px;
 }
+@media screen and (min-width: 960px) {
+  .button1 {
+    transform: translateY(-47px);
+    background-color: #E3170A;
+    color: white;
+    margin-right: 10px;
+  }
+}
+
 
 .button2 {
-  color: #5daee0;
+  display: block;
+  background-color: white;
+  color: #36769D;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  margin: auto;
+  padding-top: 20px;
+  text-decoration: underline 2px solid rgba(54, 118, 157, 0.5019607843);
 }
-
-.button1:hover, .button2:hover {
-  opacity: 0.9; /* Slight hover effect */
-}
-
-@media only screen and (min-width: 768px) {
-  .header__logo-title {
-    font-size: 40px;
-    margin-left: 15px;
-    width: 100%;
-    display: flex;
-    flex-direction: column-reverse;
-    flex: start;
+@media screen and (min-width: 960) {
+  .button2 {
+    transform: translateY(-47px);
+    background-color: #8ACFE5;
+    color: black;
+    font-size: 20px;
+    width: 250px;
+    padding: 10px;
+    margin-left: 10px;
+    border-radius: 2px;
+    text-decoration: none;
   }
 }
 
-@media screen and (min-width: 768px) {
 
-  .hero{
-    height: 90vh;
-  }
 
-  .button_container {
-    gap: 2rem;
-  }
-
-}
-
+/* REVIEW SECTION */
 .review_section {
-display: flex;
-gap: 1.5rem;
-margin: 1.5rem 0;
-flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 2rem 1rem;
 }
 
-
-.review_content {
+.review1, .review2 {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
@@ -152,8 +141,6 @@ flex-direction: column;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  flex-shrink: 0;
-  /*margin-bottom: 0.5rem; */
 }
 
 blockquote {
@@ -161,57 +148,75 @@ blockquote {
   font-style: italic;
 }
 
-blockquote p {
-  margin: 0;
-  line-height: 1.5; /* Improve readability */
-}
-
 blockquote cite {
-  display: block; /* Display on a new line */
-  font-style: normal; /* Remove italic for citation */
+  display: block;
   font-size: 0.9rem;
   color: gray;
 }
 
-/* Side-by-side layout for desktop or tablet screens */
-@media screen and (min-width: 768px) {
-  .review1 {
-    flex-direction: row;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: flex-start;
-  }
-
-  .review2 {
-    flex: 1 1 calc(50% - 2rem); /* Allow two reviews per row */
-    display: flex; /* Ensure image and text stay side by side */
-    gap: 1rem; /* Spacing between image and text */
-    align-items: flex-start; /* Align items at the top */
-    max-width: calc(50% - 2rem); /* Limit each review to half the width */
-  }
-
-  .review_img {
-    width: 75px; /* Increase image size for desktop */
-    height: 75px; /* Keep the image circular */
-  }
-}
-
-@media screen and (max-width: 767px) {
+/* Responsiv design */
+@media (min-width: 768px) {
   .review_section {
-    flex-direction: row;
+    flex-direction: row; /* Visa recensionerna bredvid varandra på desktop */
+    justify-content: space-between;
   }
-  .review_content:nth-of-type(n+2){
-    display: none;
+
+  .review1, .review2 {
+    flex: 1; /* Jämn fördelning av utrymme */
   }
 }
 
-.review_quote{
-  text-align: left;
+@media (max-width: 767px) {
+  .review2 {
+    display: none; /* Dölj den andra recensionen på mobil */
+  }
+
+  .review1 {
+    margin: 0 auto; /* Centrera den första recensionen */
+  }
 }
 
+/* REVIEW SECTION SLUT */
+
+
+
+/* CHALLENGE CARDS */
 .challenge_options {
-  padding: 2rem;
+  padding: 2rem 1rem;
+  display: flex; /* Flexbox för att visa korten i rad */
+  flex-direction: column; /* Placera titeln över korten */
+  align-items: center; /* Centrerar hela innehållet, inklusive titeln */
+}
+
+.challenge_options_title {
+  text-align: center;
+  margin-bottom: 2rem; /* Öka avståndet mellan titeln och korten */
+  font-size: 1.5rem;
+}
+
+.card {
+  display: flex; /* Flexbox för att visa korten i rad */
+  gap: 1rem; /* Mellanrum mellan varje kort */
+  justify-content: flex-start; /* För att hålla korten på en rad */
+  flex-wrap: nowrap; /* Förhindrar att korten bryts till en ny rad */
+  width: 100%;
+  justify-content: center; /* Centrerar korten inom play_section */
+}
+
+.challenge {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex; /* Flexbox för att visa innehållet i en kolumn */
+  flex-direction: column; /* Håller bilden högst upp och innehållet nedanför */
+  width: 100%; /* Gör korten lika breda */
+  max-width: 300px; /* Begränsar bredden så att korten inte blir för stora */
+}
+
+.challenge_img {
+  width: 100%;
+  height: auto; /* Låt höjden justeras för att bibehålla proportionerna */
+  object-fit: cover; /* Täcker hela området utan att bli förvrängd */
 }
 
 .challenge_content {
@@ -219,44 +224,8 @@ blockquote cite {
   text-align: center;
 }
 
-.challenge_options_title {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.card {
-  display: grid;
-  gap: 1rem;
-}
-
-.challenge {
-  flex: 1 1 calc(33.333% - 1rem);
-  max-width: calc(33.333% - 1rem);
-  box-sizing: border-box;
-  border: 1px solid #ccc;
-  padding: 0rem;
-  background-color: white;
-  border-radius: 8px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-.challenge_img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-  
-}
-
 .challenge_title {
   font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.challenge_participants {
-  font-size: 0.9rem;
-  color: #666;
   margin-bottom: 0.5rem;
 }
 
@@ -271,160 +240,166 @@ blockquote cite {
   color: white;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
 .challenge_bookbtn:hover {
-  background-color: #E3170A
+  background-color: #c20f08;
 }
+/*CHALLENGE CARD SLUT*/
 
+
+
+
+
+
+
+/* Quote Section */
 .quote_section {
   background-color: #001932;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
 }
 
 .quote_section_text {
   margin-bottom: 1rem;
+  font-size: 1.2rem;
 }
 
 .quote_section_btn {
   padding: 0.5rem 1rem;
-  background-color: #001932;
-  color: white;
-  border: none;
+  background-color: #8acfe5;
+  color: #001932;
   border-radius: 5px;
-  cursor: pointer;
-  border-color: #8acfe5;
-}
-
-.play_section {
-  padding: 1rem;
-}
-
-.play_card, .play_card2 {
-  background-color: white;
-  border: 1px solid #ccc;
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-
-.play_section_img, .play_section_imgsolo {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
-  margin-bottom: 1rem;
-}
-
-.card_headline, .card_headline2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.card_text, .card_text2 {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-}
-
-.card_btn {
-  padding: 0.5rem 1rem;
-  background-color: #ff4136;
-  color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
 }
 
-.footer {
-  background-color: #001932;
-  color: white;
-  text-align: center;
-  padding: 1rem;
+.quote_section_btn:hover {
+  background-color: #6bb7d3;
 }
+/*QUOTE SECTION SLUT*/
 
-.footer_section {
-  margin-bottom: 1rem;
-}
 
-.footer_title1 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
 
-.footer_summary {
-  font-size: 0.9rem;
-}
 
-.footer_section h5 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-
-.footer_section ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer_section ul li {
-  margin-bottom: 0.5rem;
-}
-
-.footer_section ul li a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Desktop Styles */
-@media (min-width: 768px) {
-  .header {
-    justify-content: space-between;
-  }
-
-  .header_desktop_menu {
-    display: block;
-  }
-
-  .hero {
-    margin: 2rem;
-  }
-
-  .button_container {
-    flex-direction: row;
-    justify-content: center;
-    gap: 2rem;
-  }
-
-  .card {
-    display: flex;
-    flex-wrap: wrap; /* Tillåter rutorna att brytas till nästa rad vid behov */
-    gap: 1rem; /* Lägger till mellanrum mellan rutorna */
-    justify-content: center;
-  }
-
+/* Play Section */
+@media screen and (min-width: 1200px) {
+  /* PLAY SECTION GRID LAYOUT */
   .play_section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px; /* Lägger till avstånd mellan korten */
+  }
+
+  /* PLAY CARD 1 & 2 */
+  .play_card, .play_card2 {
     display: flex;
-    gap: 2rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; /* Gör korten lika breda */
+    max-width: 600px; /* Begränsa kortens maxbredd */
+    margin: 0 auto; /* Centrerar korten inom play_section */
+  }
+
+  /* Bildhantering */
+  .play_section_img, .play_section_imgsolo {
+    width: 100%; /* Gör bilderna lika breda som korten */
+    height: auto; /* Låt höjden justeras för att behålla proportionerna */
+    max-height: 300px; /* Begränsar bildens höjd så att de inte blir för stora */
+    object-fit: cover; /* Täcker hela området utan att bli förvrängd */
+  }
+
+  /* Rubrik och text i korten */
+  .card_headline, .card_headline2 {
+    font-size: 1.5rem;
+    margin-top: 10px;
+  }
+
+  .card_text, .card_text2 {
+    font-size: 1rem;
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  /* Knapp */
+  .card_btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+
+  /* Play Card 2 */
+  .play_card2 {
+    align-items: flex-start;
+  }
+
+  .card_headline2 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+
+  .card_text2 {
+    width: 90%;
+    margin-top: 10px;
+  }
+}
+
+/* För mindre skärmar (max-width: 960px) */
+@media screen and (max-width: 960px) {
+  .play_section {
+    display: block;
+    text-align: center;
   }
 
   .play_card, .play_card2 {
-    flex: 1;
+    margin-bottom: 10px;
   }
 
-  .footer {
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
-    padding: 2rem;
-  }
-
-  .footer_section {
-    margin-bottom: 0;
+  /* Bildhantering för små skärmar */
+  .play_section_img, .play_section_imgsolo {
+    width: 100%; /* Gör bilderna lika breda som korten */
+    height: auto; /* Behåll proportionerna */
+    object-fit: contain; /* Håller bildens proportioner utan att sträcka dem */
   }
 }
 
-.star_rating{
-  text-align: left;
+
+
+
+
+/* Footer Section */
+.footer {
+  background-color: #001932;
+  color: white;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: space-between;
 }
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+ 

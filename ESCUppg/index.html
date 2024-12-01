@@ -6,17 +6,12 @@
     <title>ESCUPPG</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body id="body">
 
-    <!---HEADER PART-->
+<body id="body">
+    <!-- HEADER -->
     <header class="header">
-        <img class="logo_img" src="logo.jpg" alt="ESC loggo">
         <h1 class="header_title">Hacker Escape Rooms</h1>
-        <nav class="nav_menu_icon">
-            <button class="menu_icon">☰</button>
-    </nav>
-       
-<!----MENU - VISABLE DESKTOP-->
+        <!-- MENU - VISIBLE DESKTOP -->
         <nav class="header_desktop_menu">
             <ul class="header_desktop_menu_ul">
                 <li><a class="header_playonline" href="#">Play online</a></li>
@@ -25,138 +20,133 @@
                 <li><a class="header_contact" href="#">Contact us</a></li>
             </ul>
         </nav>
+        <img class="logo_img" src="logo.jpg" alt="ESC logo">
+        <button class="menu_icon">☰</button>
     </header>
 
     <!-- HERO SECTION -->
     <section class="hero">
-        <img class="hacker_img" src="hackerbild.png" alt="Hacker at computer">
         <div class="button_container">
-            <button class="button1">Online challenges</button>
-            <button class="button2">On-site challenges</button>
+            <a class="button1" href="#">Online challenges</a>
+            <a class="button2" href="#">On-site challenges</a>
         </div>
     </section>
 
-    
-
-    <!-- REVIEW WITH PICTURE -->
+    <!-- REVIEW SECTION -->
     <section class="review_section">
-        <div class="review1">
+        <figure class="review1">
             <img class="review_img" src="profilbild.png" alt="Picture of John Doe">
             <blockquote>
-                <p> This is a quote about how amazing this place is and how much fun me and my friends had when we tried it<br><cite>John Doe, visited us in September 2021</cite></p>
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it.<br>
+                <cite>John Doe, visited us in September 2021</cite></p>
             </blockquote>
-        </div>
-        <div class="review2">
-            <img class="review_img" src="profilbild.png" alt="Picture of John Doe">
+        </figure>
+
+        <figure class="review2">
+            <img class="review_img" src="profilbild.png" alt="Picture of Jane Doe">
             <blockquote>
-                <p> This is a quote about how amazing this place is and how much fun me and my friends had when we tried it<br><cite>John Doe, visited us in September 2021</cite></p>
+                <p>This is a quote about how amazing this place is and how much fun me and my friends had when we tried it.<br>
+                <cite>Jane Doe, visited us in October 2021</cite></p>
             </blockquote>
-        </div>
+        </figure>
     </section>
-    
-    
+
     <!-- CHALLENGE OPTIONS -->
     <section class="challenge_options">
         <h2 class="challenge_options_title">Popular challenges right now</h2>
-        <div class="card">
-            <article class="challenge"> 
-                <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
-            <div class="challenge_content">
-                <h3 class="challenge_title">Title of room (on-site)</h3>
-                <div class="star_rating">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star5.png">
-                    <p>2-6 participants</p>
-                </div>
-                <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
-                <button class="challenge_bookbtn">Book this room</button>
-            </div>
-            </article>
-
-            <article class="challenge"> 
-                <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
-                <div class="challenge_content">
-                <h3 class="challenge_title">Title of room (on-site)</h3>
-                <div class="star_rating">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star5.png">
-                    <p>2-6 participants</p>
-                </div>
-                <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
-                <button class="challenge_bookbtn">Book this room</button>
-                </div>
-            </article>
-
-            <article class="challenge"> 
-                <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
-                <div class="challenge_content">
-                <h3 class="challenge_title">Title of room (on-site)</h3>
-                <div class="star_rating">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star4.png">
-                    <img src="star5.png">
-                    <p>2-6 participants</p>
-                </div>
-                <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
-                <button class="challenge_bookbtn">Book this room</button>
-                </div>
-            </article>
-        </div>
+        <ul class="card">
+            <!-- Card 1 -->
+            <li class="card_optionitems">
+                <article class="challenge"> 
+                    <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
+                    <div class="challenge_content">
+                        <h3 class="challenge_title">Title of room (on-site)</h3>
+                        <span class="star_rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star5.png" alt="Star rating">
+                            <p>2-6 participants</p>
+                        </span>
+                        <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
+                        <button class="challenge_bookbtn">Book this room</button>
+                    </div>
+                </article>
+            </li>
+            <!-- Card 2 -->
+            <li class="card_optionitems">
+                <article class="challenge"> 
+                    <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
+                    <div class="challenge_content">
+                        <h3 class="challenge_title">Title of room (on-site)</h3>
+                        <span class="star_rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star5.png" alt="Star rating">
+                            <p>2-6 participants</p>
+                        </span>
+                        <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
+                        <button class="challenge_bookbtn">Book this room</button>
+                    </div>
+                </article>
+            </li>
+            <!-- Card 3 -->
+            <li class="card_optionitems">
+                <article class="challenge"> 
+                    <img class="challenge_img" src="hackerbild.png" alt="Hacker at computer">
+                    <div class="challenge_content">
+                        <h3 class="challenge_title">Title of room (on-site)</h3>
+                        <span class="star_rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star4.png" alt="Star rating">
+                            <img src="star5.png" alt="Star rating">
+                            <p>2-6 participants</p>
+                        </span>
+                        <p class="challenge_description">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
+                        <button class="challenge_bookbtn">Book this room</button>
+                    </div>
+                </article>
+            </li>
+        </ul>
     </section>
-
-    <!-- ON-SITE & ONLINE CHALLENGES BUTTONS AGAIN -->
-    <div class="button_container2">
-        <button class="button1">Online challenges</button>
-        <button class="button2">On-site challenges</button>
-    </div>
-
 
     <!-- QUOTE SECTION -->
     <section class="quote_section">
-        <p class="quote_section_text">Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem
-            haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis
-            libertatisque perficiuntur.</p>
-        <button class="quote_section_btn">Read the full story</button>
+        <p class="quote_section_text">Quodsi haberent magnalia inter potentiam et divitias, et non illam quidem haec eo spectant haec quoque vos omnino desit illud quo solo felicitatis libertatisque perficiuntur.</p>
+        <a class="quote_section_btn" href="#">Read the full story</a>
     </section>
 
     <!-- PLAY SECTION -->
     <section class="play_section">
         <div class="play_card">
             <img class="play_section_img" src="friends.jpeg" alt="Group of friends playing">
-                <h2 class="card_headline">Play with your friends or build your team stronger at work</h2>
-                <p class="card_text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
-                <button class="card_btn">Book on-site today</button>
-            </div>
+            <h2 class="card_headline">Play with your friends or build your team stronger at work</h2>
+            <p class="card_text">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p> 
+            <a class="card_btn" href="#">Book on-site today</a>
         </div>
 
         <div class="play_card2">
             <img class="play_section_imgsolo" src="solo2.jpeg" alt="Solo player on computer">
             <h2 class="card_headline2">Play online or visit our venue for one of our 25 escape rooms</h2>
-            <p class="card_text2">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
-            <button class="card_btn">Book on-site today</button>
+            <p class="card_text2">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
+            <a class="card_btn" href="#">Book online today</a>
         </div>
     </section>
 
-
-
-
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
     <footer class="footer">
         <div class="footer_section">
-            <h5 class="footer_title1">[Esc] Hacker Escape Rooms</h5>
-            <p class="footer_summary">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil
-                inuitam. Nemo nocere tibi erit, et non inimicos, et</p>
+            <h2 class="footer_title1">[Esc] Hacker Escape Rooms</h2>
+            <p class="footer_summary">Praeterea, ex culpa non invenies unum aut non accusatis unum. Et nihil inuitam.</p>
         </div>
+
         <div class="footer_list">
-            <h5 class="footer_sitemap">Site map</h5>
+            <h2 class="footer_sitemap">Site map</h2>
             <ul>
                 <li><a href="#">The Story</a></li>
                 <li><a href="#">Contact Us</a></li>
@@ -165,15 +155,17 @@
                 <li><a href="#">Play on-site</a></li>
             </ul>
         </div>
-        <div class="footer_>
-            <h5 class="footer_follow">Follow us on</h5>
+
+        <div class="footer_follow">
+            <h2 class="footer_follow_title">Follow us on</h2>
             <ul>
                 <li><a href="#">Facebook</a></li>
-                <li><a hsref="#">Instagram</a></li>
+                <li><a href="#">Instagram</a></li>
                 <li><a href="#">Twitter</a></li>
             </ul>
         </div>
     </footer>
 
+<script defer src="main.js"></script>
 </body>
 </html>
