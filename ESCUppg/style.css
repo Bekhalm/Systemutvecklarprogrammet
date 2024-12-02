@@ -10,6 +10,7 @@ body {
   line-height: 1.6;
 }
 
+/* HEADER SECTION */
 .header {
   position: relative;
   justify-content: space-between;
@@ -31,39 +32,48 @@ body {
   height: 50px;
 }
 
-@media screen and (min-width: 960px) {
-  .header {
-    height: 150px;
+/* Desktopmeny */
+.header_desktop_menu_ul {
+  display: none; /* Döljs på små skärmar */
+}
+
+@media screen and (min-width: 768px) {
+  .header_desktop_menu_ul {
+      display: flex;
+      justify-content: flex-end;
+      gap: 1rem;
+      list-style: none;
+      margin-right: 1rem;
+  }
+
+  /* Dölj hamburgarmenyn på desktop */
+  .menu_icon, .ham_menu {
+      display: none;
   }
 }
 
-.menu_icon {
-  background: none;
-  border: none;
+/* Hamburgarmenyn */
+.ham_menu {
+  display: none; /* Dölj hamburgarmenyn som standard */
+  position: absolute;
+  top: 60px;
+  right: 10px;
+  background-color: #011827;
   color: white;
-  font-size: 1.5rem;
-  cursor: pointer;
+  width: 200px;
+  padding: 1rem;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-.header_desktop_menu {
-  display: none;
+.ham_menu.active {
+  display: flex; /* Visa hamburgarmenyn när aktiv */
 }
 
-.header_desktop_menu_ul {
-  display: flex;
-  list-style: none;
-  gap: 1.5rem;
-}
 
-.header_desktop_menu_ul li a {
-  text-decoration: none;
-  color: white;
-  font-size: 1rem;
-}
-
-.header_desktop_menu_ul li a:hover {
-  color: #8acfe5;
-}
 
 /* HERO SECTION */
 .hero {
@@ -72,13 +82,13 @@ body {
   background-position: center center;
   height: 40vh;
 }
-/* HERO SECTION SLUT*/
+/* HERO SECTION END */
 
-
+/* BUTTONS */
 .button1 {
   display: block;
   background-color: #8ACFE5;
-  font-size: 20px;
+  font-size: 1.2rem; /* Enhetlig storlek */
   font-weight: bold;
   width: 250px;
   border: none;
@@ -86,33 +96,33 @@ body {
   margin: auto;
   padding: 10px;
 }
+
+.button2 {
+  display: block;
+  background-color: white;
+  color: #36769D;
+  font-size: 1.2rem; /* Enhetlig storlek */
+  font-weight: bold;
+  border: none;
+  margin: auto;
+  padding-top: 20px;
+  text-decoration: underline 2px solid rgba(54, 118, 157, 0.5);
+}
+
 @media screen and (min-width: 960px) {
   .button1 {
     transform: translateY(-47px);
     background-color: #E3170A;
     color: white;
     margin-right: 10px;
+    font-size: 1.5rem; /* Ökad storlek för desktop */
   }
-}
 
-
-.button2 {
-  display: block;
-  background-color: white;
-  color: #36769D;
-  font-size: 15px;
-  font-weight: bold;
-  border: none;
-  margin: auto;
-  padding-top: 20px;
-  text-decoration: underline 2px solid rgba(54, 118, 157, 0.5019607843);
-}
-@media screen and (min-width: 960) {
   .button2 {
     transform: translateY(-47px);
     background-color: #8ACFE5;
     color: black;
-    font-size: 20px;
+    font-size: 1.5rem; /* Ökad storlek för desktop */
     width: 250px;
     padding: 10px;
     margin-left: 10px;
@@ -120,8 +130,6 @@ body {
     text-decoration: none;
   }
 }
-
-
 
 /* REVIEW SECTION */
 .review_section {
@@ -154,69 +162,77 @@ blockquote cite {
   color: gray;
 }
 
-/* Responsiv design */
 @media (min-width: 768px) {
   .review_section {
-    flex-direction: row; /* Visa recensionerna bredvid varandra på desktop */
+    flex-direction: row;
     justify-content: space-between;
   }
 
   .review1, .review2 {
-    flex: 1; /* Jämn fördelning av utrymme */
+    flex: 1;
+  }
+}
+
+@media (min-width: 960px) {
+  /* Enhetlig storlek på text i recensioner */
+  blockquote {
+    font-size: 1.1rem;
+  }
+  blockquote cite {
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 767px) {
   .review2 {
-    display: none; /* Dölj den andra recensionen på mobil */
+    display: none;
   }
 
   .review1 {
-    margin: 0 auto; /* Centrera den första recensionen */
+    margin: 0 auto;
   }
 }
-
-/* REVIEW SECTION SLUT */
-
-
+/* REVIEW SECTION END */
 
 /* CHALLENGE CARDS */
 .challenge_options {
   padding: 2rem 1rem;
-  display: flex; /* Flexbox för att visa korten i rad */
-  flex-direction: column; /* Placera titeln över korten */
-  align-items: center; /* Centrerar hela innehållet, inklusive titeln */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .challenge_options_title {
   text-align: center;
-  margin-bottom: 2rem; /* Öka avståndet mellan titeln och korten */
+  margin-bottom: 2rem;
   font-size: 1.5rem;
 }
 
 .card {
-  display: flex; /* Flexbox för att visa korten i rad */
-  gap: 1rem; /* Mellanrum mellan varje kort */
-  justify-content: flex-start; /* För att hålla korten på en rad */
-  flex-wrap: nowrap; /* Förhindrar att korten bryts till en ny rad */
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
   width: 100%;
-  justify-content: center; /* Centrerar korten inom play_section */
+  justify-content: space-around;
 }
 
 .challenge {
   border: 1px solid #ccc;
   border-radius: 8px;
   overflow: hidden;
-  display: flex; /* Flexbox för att visa innehållet i en kolumn */
-  flex-direction: column; /* Håller bilden högst upp och innehållet nedanför */
-  width: 100%; /* Gör korten lika breda */
-  max-width: 300px; /* Begränsar bredden så att korten inte blir för stora */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 400px;
+  min-height: 350px;
+  margin-bottom: 2rem;
 }
 
 .challenge_img {
   width: 100%;
-  height: auto; /* Låt höjden justeras för att bibehålla proportionerna */
-  object-fit: cover; /* Täcker hela området utan att bli förvrängd */
+  height: 200px;
+  object-fit: cover;
 }
 
 .challenge_content {
@@ -245,15 +261,9 @@ blockquote cite {
 .challenge_bookbtn:hover {
   background-color: #c20f08;
 }
-/*CHALLENGE CARD SLUT*/
+/* CHALLENGE CARDS END */
 
-
-
-
-
-
-
-/* Quote Section */
+/* QUOTE SECTION */
 .quote_section {
   background-color: #001932;
   color: white;
@@ -268,88 +278,65 @@ blockquote cite {
 
 .quote_section_btn {
   padding: 0.5rem 1rem;
-  background-color: #8acfe5;
-  color: #001932;
-  border-radius: 5px;
-  border: none;
+  background-color: #001932;
+  color: #71a4d7;
+  border-radius: 1px;
+  border: 2px solid #71a4d7;
   cursor: pointer;
 }
+/* QUOTE SECTION END */
 
-.quote_section_btn:hover {
-  background-color: #6bb7d3;
+
+
+
+/* PLAY SECTION */
+
+.card_headline, .card_headline2 {
+  font-size: 1rem;
+  margin-top: 10px;
 }
-/*QUOTE SECTION SLUT*/
 
-
-
-
-/* Play Section */
-@media screen and (min-width: 1200px) {
-  /* PLAY SECTION GRID LAYOUT */
+@media screen and (min-width: 960px) {
   .play_section {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px; /* Lägger till avstånd mellan korten */
+    gap: 20px;
   }
 
-  /* PLAY CARD 1 & 2 */
-  .play_card, .play_card2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%; /* Gör korten lika breda */
-    max-width: 600px; /* Begränsa kortens maxbredd */
-    margin: 0 auto; /* Centrerar korten inom play_section */
-  }
-
-  /* Bildhantering */
   .play_section_img, .play_section_imgsolo {
-    width: 100%; /* Gör bilderna lika breda som korten */
-    height: auto; /* Låt höjden justeras för att behålla proportionerna */
-    max-height: 300px; /* Begränsar bildens höjd så att de inte blir för stora */
-    object-fit: cover; /* Täcker hela området utan att bli förvrängd */
-  }
-
-  /* Rubrik och text i korten */
-  .card_headline, .card_headline2 {
-    font-size: 1.5rem;
-    margin-top: 10px;
-  }
-
-  .card_text, .card_text2 {
-    font-size: 1rem;
-    margin-top: 10px;
     width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: cover;
+  }
+  
+  .play_card {
+    justify-content: flex-start;
   }
 
-  /* Knapp */
-  .card_btn {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #3498db;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-
-  /* Play Card 2 */
   .play_card2 {
-    align-items: flex-start;
-  }
-
-  .card_headline2 {
-    font-size: 1.5rem;
-    margin-top: 20px;
-  }
-
-  .card_text2 {
-    width: 90%;
-    margin-top: 10px;
+    justify-content: flex-end;
   }
 }
 
-/* För mindre skärmar (max-width: 960px) */
+.card_text, .card_text2 {
+  font-size: 1rem; /* Enhetlig storlek för text i play section */
+  margin-top: 10px;
+  width: 100%;
+}
+
+.card_btn1, .card_btn2 {
+  padding: 0.5rem 1rem; /* Justera padding för att matcha */
+  background-color: #E3170A; /* Röd bakgrund */
+  color: white; /* Vit text */
+  border-radius: 5px; /* Lätt rundade hörn, som challenge_bookbtn */
+  cursor: pointer; /* Markera att det är en knapp */
+  border: none; /* Ta bort eventuell kantlinje */
+  text-align: center; /* Centrerar texten */
+  font-weight: bold; /* För att ge texten en mer framträdande stil */
+  text-decoration: none; /* För att ta bort eventuell understrykning */
+}
+
 @media screen and (max-width: 960px) {
   .play_section {
     display: block;
@@ -360,19 +347,18 @@ blockquote cite {
     margin-bottom: 10px;
   }
 
-  /* Bildhantering för små skärmar */
   .play_section_img, .play_section_imgsolo {
-    width: 100%; /* Gör bilderna lika breda som korten */
-    height: auto; /* Behåll proportionerna */
-    object-fit: contain; /* Håller bildens proportioner utan att sträcka dem */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
   }
 }
+/* PLAY SECTION END */
 
 
 
 
-
-/* Footer Section */
+/* FOOTER SECTION */
 .footer {
   background-color: #001932;
   color: white;
@@ -383,23 +369,24 @@ blockquote cite {
   justify-content: space-between;
 }
 
+/* Ta bort prickarna från alla <ul> i footer */
+.footer_list ul,
+.footer_follow ul {
+  list-style-type: none; /* Tar bort standard pricken */
+  padding-left: 0; /* Tar bort eventuellt vänster indrag */
+}
 
+.footer_list button{
+  background-color: #001932;
+  color: white;
+  border: none;
+  padding: none;         /* Lite padding */
+}
 
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
- 
+.footer_follow button{
+  background-color: #001932;
+  color: white;
+  border: none;
+  padding: none;
+}
+/* FOOTER SECTION END */
