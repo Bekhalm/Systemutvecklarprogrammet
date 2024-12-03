@@ -166,12 +166,17 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: url(hacker.ny.png);
+  background: url(hackerbild.png);
   background-size:cover;
   background-position: center; /*centreliserar bilden*/
-  height: 65vh;  /*höjden på biden*/
+  min-height: 65vh;  /*höjden på biden*/
   width: 100%;
-  object-fit: cover;
+}
+
+@media (max-width:960px){
+  .hero{
+    min-height: 40vh;
+  }
 }
 /* HERO SECTION END */
 
@@ -517,10 +522,10 @@ blockquote cite {
   }
 
   .play_section_imgsolo{
-    margin-left: 63%;
+    
   }
   .card_text{
-    text-align: right;
+    
   }
 
 }
