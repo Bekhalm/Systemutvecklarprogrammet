@@ -14,23 +14,38 @@ body {
   padding: 0;
   margin: 0;
   background-color: #001427;
-  width: auto;
+  width: 100%;
   color: white;
-  height: 100%;
+  height: 100px;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  
 }
 
 .header_title {
-  font-size: 1.2rem;
-  margin-left: 6rem;
+  color: white;
+  height: 20px;
+  width: 20%;
+  font-size: 20px;
+  margin-top: -105px;
+  margin-left: 120px;
+}
+
+@media (min-width: 960px) {
+  .header_title{
+    font-size: 20px;
+    margin-top: -70px;
+    margin-left: 120px;
+  }
 }
 
 
 
 .logo_img {
-  height: 50px;
+  height: 70px;
+  margin-left: 2px;
+  margin-top: 15px;
+  margin-bottom: 35px;
 }
 
 
@@ -93,10 +108,12 @@ body {
   background-color: #001427;
   color: white;
   padding: 50px;
-  margin-right: 5px;
+  margin-right: 12px;
   margin-top: 5px;
   z-index: 1000;
   text-align: center;
+  animation-name: fade;
+  animation-duration: 10s;
 }
 
 .ham_menu ul {
@@ -139,10 +156,11 @@ body {
 
 /* HERO SECTION */
 .hero {
-  background: url(hackerbild.png);
+  display: block;
+  background: url(hacker.ny.png);
   background-size:cover;
   background-position: center; /*centreliserar bilden*/
-  height: 60vh;  /*höjden på biden*/
+  height: 50vh;  /*höjden på biden*/
   width: 100%;
   object-fit: cover;
 }
@@ -303,6 +321,13 @@ blockquote cite {
   
 }
 
+@media screen and (min-width: 960px) {
+  .challenge_options{
+    justify-content: center;
+    margin-bottom: 60px;
+  }
+}
+
 
 .challenge_options_title {
   text-align: center;
@@ -411,92 +436,87 @@ blockquote cite {
 .card_headline,
 .card_headline2 {
   font-size: 1rem;
+  padding: 0;
+  margin: 0;
   margin-top: 10px; /*Avståndet från bilden ovan*/
 }
 
-.play_section{
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-
-}
-
-.play_card, .play_card2 {
-  display: flex; /* Gör varje kort till en flexcontainer */
-  align-items: skretch; /* Vertikal centrering av bild och text */
-  gap: 1rem; /* Mellanrum mellan bild och text */
-}
 
 .play_card {
   flex-direction: row; /* Bild till vänster, text till höger */
+  display: inline-block;
+  width: 100%;
+  padding:10px;
+  text-align: center;
 }
 
 .play_card2 {
   flex-direction: row-reverse; /* Bild till höger, text till vänster */
-}
-
-.play_section_img, .play_section_imgsolo {
-  flex: 0 0 50%; /* Bilden tar upp 50% av bredden */
-  max-width: 400px; /* Sätt en maxbredd för att förhindra för stora bilder */
-}
-
-.card_headline, .card_headline2, .card_text, .card_text2 {
-  flex: 1; /* Textdelen tar upp resterande utrymme */
-}
-
-@media screen and (max-width: 960px) {
-  .play_card, .play_card2 {
-    flex-direction: column; /* Ställer bilden och texten ovanpå varandra */
-    text-align: center; /* Centrerar texten för små skärmar */
-  }
-
-  .play_section_img, .play_section_imgsolo {
-    max-width: 100%; /* Bilden tar upp hela bredden */
-    margin: 0 auto; /* Centrerar bilden */
-  }
-
-  .card_headline, .card_headline2, .card_text, .card_text2 {
-    text-align: center; /* Centrerar texten */
-  }
-}
-
-
-
-.play_section_img{
-  object-fit: cover;
-  max-height: auto;
+  display: inline-block;
   width: 100%;
-  display: block;
+  padding:10px;
+  text-align: center;
 }
 
-.play_section_imgsolo{
+
+.play_section_img, .play_section_imgsolo{
   object-fit: cover;
-  max-height: auto;
-  width: 100%;
+  max-width: 100%;
+  background-size: cover;
   display: block;
+  padding: 0;
+  margin-right: 50px;
 }
-
-´
 
 
 .card_text,
 .card_text2 {
   font-size: 1rem; /* Enhetlig storlek för text i play section */
+  flex-direction: column;
   margin-top: 10px;
-  width: 100%;
+  max-width: 100%;
   text-align: left;
+  padding: 0;
+  margin: 0;
 }
 
-.card_btn1,
-.card_btn2 {
-  padding: 0.5rem 1rem;
+.card_btn1,  .card_btn2 {
   background-color: #e3170a;
-  border-color: #e3170a;
   color: white;
   border-radius: 5px;
   cursor: pointer;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 1rem;
+  margin: 0;
+ 
 }
 
+@media screen and (min-width: 960px) {
+  .play_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+  }
+  .play_section_img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .card_text{
+    justify-content: center;
+  }
+  .feature:nth-child(even) .play_section_imgsolo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0;
+    grid-column: 1;
+
+  }
+  .feature:nth-child(even) .card_text2 {
+    justify-self: left;
+  }
+}
 /* PLAY SECTION ENDS*/
 
 
@@ -517,6 +537,16 @@ blockquote cite {
 .footer_follow ul {
   list-style-type: none; /* Tar bort standard pricken */
   padding-left: 0; /* Tar bort eventuellt vänster indrag */
+  margin-right: 200px;
+}
+
+@media screen and (min-width: 960px){
+  .footer_list ul,
+  .footer_follow ul {
+  list-style-type: none; /* Tar bort standard pricken */
+  padding-left: 0; /* Tar bort eventuellt vänster indrag */
+  margin-right: 500px;
+  }
 }
 
 .footer_list button, .footer_follow button {
