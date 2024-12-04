@@ -110,7 +110,7 @@ body {
   background-color: #001427;
   color: white;
   padding: 50px;
-  margin-right: 12px;
+  margin-right: 7px;
   margin-top: 5px;
   z-index: 1000;
   text-align: center;
@@ -432,23 +432,18 @@ blockquote cite {
 
 
 /* Play sektionen*/
-.card_headline,
-.card_headline2 {
+.card_headline{
   font-size: 1rem;
   padding: 0;
   margin: 0;
   margin-top: 10px; 
 }
 
-.play_card {
+.play_card{
   display: inline-block;
   width: 100%;
 }
 
-.play_card2 {
-  display: inline-block;
-  max-width: 100%;
-}
 
 .play_section_img{
   flex-direction: row; /* Bild till vänster, text till höger */
@@ -465,8 +460,7 @@ blockquote cite {
 }
 
 
-.card_text,
-.card_text2 {
+.card_text{
   font-size: 1rem; 
   flex-direction: column;
   margin-top: 10px;
@@ -476,7 +470,7 @@ blockquote cite {
   margin: 0;
 }
 
-.card_btn1,  .card_btn2 {
+.card_btn{
   background-color: #e3170a;
   color: white;
   border-radius: 5px;
@@ -488,54 +482,12 @@ blockquote cite {
   margin-bottom: 1rem;
 }
 
-
-@media screen and (min-width: 960px) {
-  .play_section_imgsolo{
-    float: right;
-  }
-
-  .play_section_img{
-    float: left;
-  }
-
-  .play_section_card1, .play_section_card2{
-    display: flex;
-    flex-wrap: wrap; /* Gör att innehållet kan radbryta på mindre skärmar */
-    align-items: flex-start; 
-    gap: 20px;
-  }
-
-  .card_headline, .card_headline2{
-    font-size: 1rem;
-    margin: 0;
-    margin-top: 10px; 
-    word-wrap: break-word; /* Gör så att långa ord bryts när de inte får plats */
-  }
-
-
-  card_text, .card_text2 {
-    font-size: 1rem;
-    text-align: left;
-    overflow-wrap: break-word; /* Texten bryts när den är för lång */
-  }
-
-
-  .card_btn1, .card_btn2 {
-    background-color: #e3170a;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    padding: 10px 20px;
-    display: inline-block;
-    margin-top: 1rem;
-  }
-}
   
-/* FOOTER SECTION */
+/* Footer sektionen */
 .footer {
   background-color: #001932;
   color: white;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -546,15 +498,13 @@ blockquote cite {
 .footer_list ul,
 .footer_follow ul {
   list-style-type: none; /* Tar bort standard pricken */
-  padding-left: 0; /* Tar bort eventuellt vänster indrag */
-  margin-right: 200px;
+  
 }
 
 @media screen and (min-width: 960px){
   .footer_list ul,
   .footer_follow ul {
   list-style-type: none; /* Tar bort standard pricken */
-  padding-left: 0; /* Tar bort eventuellt vänster indrag */
   margin-right: 200px;
   }
 }
@@ -563,7 +513,5 @@ blockquote cite {
   background-color: #001932;
   color: white;
   border: none;
-  padding: none; /* Lite padding */
+  padding: none; 
 }
-
-/* FOOTER SECTION ENDS */
