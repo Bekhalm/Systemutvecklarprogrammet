@@ -180,7 +180,7 @@ body {
 
 /* Hero/Hacker sektionen */
 .hero {
-  background: url(hackerbild.png);
+  background: url(img/hackerbild.png);
   background-size: cover;
   background-position: center; /*centreliserar bilden*/
   height: 35rem;
