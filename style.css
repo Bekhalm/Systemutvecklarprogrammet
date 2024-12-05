@@ -170,7 +170,7 @@ body {
   background: url(hackerbild.png);
   background-size:cover;
   background-position: center; /*centreliserar bilden*/
-  min-height: 65vh; 
+  height: 400px; 
   width: 100%;
 }
 
@@ -220,6 +220,7 @@ body {
   .buttons {
     flex-direction: row; /* Så knapparna ligger bredvid varandra i desktop-vy*/
     justify-content: center;
+    margin-top: -2.5rem;
     
 
   }
