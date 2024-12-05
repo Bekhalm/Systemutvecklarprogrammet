@@ -183,13 +183,15 @@ body {
 
 
 /* Första solo-knapparna */
-.buttons{
+.buttons, .buttons2{
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
   gap: 1rem;
   margin: 0.5rem 0.5rem;
 }
+
+
 
 .button1, .button2 {
   font-size: 1.1rem;
@@ -221,9 +223,14 @@ body {
     flex-direction: row; /* Så knapparna ligger bredvid varandra i desktop-vy*/
     justify-content: center;
     margin-top: -2.5rem;
-    
-
   }
+
+ 
+  .buttons2{
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
   .button1 {
     background-color: #e3170a;
     color: white;
@@ -474,6 +481,7 @@ blockquote cite {
 .card_btn{
   background-color: #e3170a;
   color: white;
+  border-color: #e3170a;
   border-radius: 5px;
   cursor: pointer;
   padding: 10px 20px;
@@ -481,6 +489,72 @@ blockquote cite {
   margin-top: 1rem;
   margin: 0;
   margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+
+@media screen and (min-width: 960px) {
+  
+    /* Andra kortet: text till vänster, bild till höger */
+    .play_section_card {
+      display: flex;
+      gap: 2rem;
+      flex-direction:row; /* Bild till höger */
+      margin-right: 1.5rem;
+  
+    }
+  
+
+    .play_section_img, .play_section_imgsolo{
+      height: auto; /* Bevarar proportioner */
+      min-width: 51.2%;
+
+    }
+   
+  
+    .play_section_card2{
+      display: flex;
+      flex-direction: row-reverse;
+      margin-left: 1.5rem;
+    }
+
+  
+  
+    .card_headline{
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+      margin-top: 1rem;;
+
+    }
+    
+  
+    .card_text{
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+      line-height: 1.6;
+      color: #444;
+  
+    }
+
+    .card_btn{
+      display: inline-block;
+      background-color: #E3170A;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;  
+      border-radius: 0.3rem;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+  
+
+    .card_btn:hover{
+      background-color: #C51408;
+    }
 }
 
   
@@ -488,7 +562,7 @@ blockquote cite {
 .footer {
   background-color: #001932;
   color: white;
-  padding: 4rem 1rem;
+  padding: 3rem 1rem;
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
@@ -498,15 +572,15 @@ blockquote cite {
 
 .footer_list ul,
 .footer_follow ul {
-  list-style-type: none; /* Tar bort standard pricken */
+  list-style-type: none; /* Tar bort prickarna */
   
 }
 
 @media screen and (min-width: 960px){
   .footer_list ul,
   .footer_follow ul {
-  list-style-type: none; /* Tar bort standard pricken */
-  margin-right: 200px;
+  list-style-type: none; 
+  margin-right: 20rem;
   }
 }
 
