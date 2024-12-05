@@ -181,15 +181,15 @@ body {
 /* Hero/Hacker sektionen */
 .hero {
   background: url(hackerbild.png);
-  background-size:cover;
+  background-size: cover;
   background-position: center; /*centreliserar bilden*/
-  height: 400px; 
+  height: 35rem;
   width: 100%;
 }
 
 @media (max-width:960px){
   .hero{
-    min-height: 40vh;
+    height: 15rem;
   }
 }
 
@@ -419,7 +419,7 @@ blockquote cite {
 
 .card {
   display: flex; 
-  flex-direction: row; /* Ordna i en rad */
+  flex-direction: row; 
   justify-content: center; /* Centrerar korten horisontellt */
   gap: 1rem; 
   list-style-type: none; /* Ta bort standard-listpunkterna */
@@ -510,7 +510,7 @@ blockquote cite {
 
 @media screen and (min-width: 960px) {
   
-    /* Andra kortet: text till vänster, bild till höger */
+    /*Text till vänster, bild till höger */
     .play_section_card {
       display: flex;
       gap: 2rem;
@@ -521,7 +521,7 @@ blockquote cite {
   
 
     .play_section_img, .play_section_imgsolo{
-      height: auto; /* Bevarar proportioner */
+      height: auto; 
       min-width: 51.2%;
 
     }
